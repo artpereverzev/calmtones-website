@@ -195,6 +195,8 @@
             font-weight: 600;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
 
         .download-btn:hover {
@@ -204,9 +206,129 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
+        .download-btn.coming-soon {
+            background: rgba(91, 163, 245, 0.1);
+            border-color: rgba(91, 163, 245, 0.3);
+            cursor: default;
+        }
+
+        .download-btn.coming-soon:hover {
+            transform: none;
+            background: rgba(91, 163, 245, 0.15);
+            border-color: rgba(91, 163, 245, 0.4);
+        }
+
         .download-btn img {
             width: 24px;
             height: 24px;
+        }
+
+        .download-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .download-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .download-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA3F5 100%);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Notification Section */
+        .notification-section {
+            background: rgba(74, 144, 226, 0.1);
+            border: 2px solid rgba(74, 144, 226, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .notification-title {
+            color: #5BA3F5;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .notification-subtitle {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .notification-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .notification-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 16px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .notification-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .notification-input:focus {
+            outline: none;
+            border-color: #5BA3F5;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .notification-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA3F5 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            min-width: 120px;
+        }
+
+        .notification-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+        }
+
+        .notification-btn:active {
+            transform: translateY(0);
         }
 
         /* Features */
@@ -323,8 +445,15 @@
                 text-align: center;
             }
 
-            .navbar-nav a:last-child {
-                border-bottom: none;
+            .notification-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .notification-input {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -365,14 +494,38 @@
             
             <!-- Download Buttons -->
             <div class="download-section">
-                <a href="#" class="download-btn">
+                <div class="download-btn coming-soon">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z'/%3E%3C/svg%3E" alt="Apple">
-                    Download for iOS
-                </a>
-                <a href="#" class="download-btn">
+                    <div class="download-content">
+                        <span class="download-title">Coming to App Store</span>
+                        <span class="download-subtitle">Stay tuned for iOS release</span>
+                    </div>
+                    <div class="coming-soon-badge">Soon</div>
+                </div>
+                <div class="download-btn coming-soon">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z'/%3E%3C/svg%3E" alt="Google Play">
-                    Download for Android
-                </a>
+                    <div class="download-content">
+                        <span class="download-title">Coming to Google Play</span>
+                        <span class="download-subtitle">Stay tuned for Android release</span>
+                    </div>
+                    <div class="coming-soon-badge">Soon</div>
+                </div>
+            </div>
+
+            <!-- Get Notified Section -->
+            <div class="notification-section">
+                <h3 class="notification-title">Get Notified When We Launch!</h3>
+                <p class="notification-subtitle">Be the first to know when Calm Tones becomes available</p>
+                <form class="notification-form" onsubmit="handleNotificationSignup(event)">
+                    <input 
+                        type="email" 
+                        class="notification-input" 
+                        placeholder="Enter your email address"
+                        required
+                        id="emailInput"
+                    >
+                    <button type="submit" class="notification-btn">Notify Me</button>
+                </form>
             </div>
         </header>
 
@@ -445,6 +598,33 @@
                 nav.classList.remove('mobile-open');
             }
         });
+
+        // Handle notification signup
+        function handleNotificationSignup(event) {
+            event.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Here you would typically send the email to your backend
+            // For now, we'll just show a success message
+            alert('Thank you! We\'ll notify you when Calm Tones launches 🎵');
+            
+            // Clear the form
+            document.getElementById('emailInput').value = '';
+            
+            // You can add actual email collection here later:
+            // fetch('/api/notify-signup', { 
+            //     method: 'POST', 
+            //     body: JSON.stringify({email}),
+            //     headers: {'Content-Type': 'application/json'}
+            // });
+        }
     </script>
 </body>
 </html>
