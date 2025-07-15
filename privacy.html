@@ -134,6 +134,21 @@
             padding: 40px 20px;
         }
 
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5BA3F5;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #4A90E2;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 50px;
@@ -181,26 +196,45 @@
             border-left: 4px solid #4A90E2;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #5BA3F5;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #4A90E2;
-        }
-
         .content-section {
             background: rgba(255,255,255,0.05);
             border-radius: 12px;
             padding: 30px;
             border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(26, 35, 50, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #5BA3F5;
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -282,12 +316,13 @@
     <!-- Main Content -->
     <div class="main-content">
         <div class="content-container">
+            <a href="/" class="back-link">← Back to Home</a>
+            
             <div class="header">
                 <div class="logo">
                     <img src="/android-chrome-512x512.png" alt="Calm Tones Logo">
                 </div>
                 <h1>Privacy Policy</h1>
-                <a href="/" class="back-link">← Back to Home</a>
             </div>
 
             <div class="content-section">
@@ -327,6 +362,19 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/support.html">Support</a>
+                <a href="/about.html">About</a>
+                <a href="mailto:support@calmtones.app">Contact</a>
+            </div>
+            <p class="copyright">© 2025 Calm Tones. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         function toggleMobileMenu() {
