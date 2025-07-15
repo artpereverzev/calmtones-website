@@ -228,6 +228,40 @@
             color: #4A90E2;
         }
 
+        /* Footer */
+        .footer {
+            background: rgba(26, 35, 50, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #5BA3F5;
+        }
+
+        .footer .copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
         .faq-item {
             background: rgba(255,255,255,0.03);
             border-radius: 8px;
@@ -392,6 +426,19 @@
         </div>
     </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/support.html">Support</a>
+                <a href="/about.html">About</a>
+                <a href="mailto:support@calmtones.app">Contact</a>
+            </div>
+            <p class="copyright">© 2025 Calm Tones. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         function toggleMobileMenu() {
