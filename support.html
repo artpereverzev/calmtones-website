@@ -42,7 +42,7 @@
             padding: 15px 0;
         }
 
-        .navbar .container-nav {
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -128,10 +128,25 @@
             margin-top: 80px;
         }
 
-        .container {
+        .content-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5BA3F5;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #4A90E2;
         }
 
         .header {
@@ -185,21 +200,6 @@
             margin-bottom: 20px;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #5BA3F5;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #4A90E2;
-        }
-
         .support-section {
             background: rgba(255,255,255,0.05);
             border-radius: 12px;
@@ -226,6 +226,14 @@
 
         .contact-card a:hover {
             color: #4A90E2;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #5BA3F5;
         }
 
         /* Footer */
@@ -257,17 +265,9 @@
             color: #5BA3F5;
         }
 
-        .footer .copyright {
+        .copyright {
             color: rgba(255,255,255,0.5);
             font-size: 0.9rem;
-        }
-
-        .faq-item {
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid #5BA3F5;
         }
 
         /* Responsive */
@@ -276,7 +276,7 @@
                 font-size: 2rem;
             }
             
-            .container {
+            .content-container {
                 padding: 20px 15px;
             }
             
@@ -315,13 +315,18 @@
             .navbar-nav a:last-child {
                 border-bottom: none;
             }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation Header -->
     <nav class="navbar">
-        <div class="container-nav">
+        <div class="container">
             <a href="/" class="navbar-brand">
                 <div class="navbar-logo">
                     <img src="/android-chrome-512x512.png" alt="Calm Tones">
@@ -343,88 +348,89 @@
 
     <!-- Main Content -->
     <div class="main-content">
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="/android-chrome-512x512.png" alt="Calm Tones Logo">
-            </div>
-            <h1>Support</h1>
+        <div class="content-container">
             <a href="/" class="back-link">← Back to Home</a>
-        </div>
-
-        <div class="support-section">
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faq-item">
-                <h3>How do I mix multiple sounds together?</h3>
-                <p>In the mixing view, tap the "+" button to add sounds to your current mix. You can adjust the volume of each sound individually and save your favorite combinations as presets.</p>
+            
+            <div class="header">
+                <div class="logo">
+                    <img src="/android-chrome-512x512.png" alt="Calm Tones Logo">
+                </div>
+                <h1>Support</h1>
             </div>
 
-            <div class="faq-item">
-                <h3>Can I use Calm Tones while using other apps?</h3>
-                <p>Yes! Calm Tones supports background playback. Your sounds will continue playing when you switch to other apps or lock your device.</p>
+            <div class="support-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>How do I mix multiple sounds together?</h3>
+                    <p>In the mixing view, tap the "+" button to add sounds to your current mix. You can adjust the volume of each sound individually and save your favorite combinations as presets.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I use Calm Tones while using other apps?</h3>
+                    <p>Yes! Calm Tones supports background playback. Your sounds will continue playing when you switch to other apps or lock your device.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do Live Activities work?</h3>
+                    <p>On iOS 16.1+, you can control Calm Tones directly from your Lock Screen and Dynamic Island. Play, pause, and adjust volume without opening the app.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are location-based sound recommendations?</h3>
+                    <p>When you enable location access, Calm Tones can suggest appropriate soundscapes for your current environment, like ocean sounds when you're near the beach.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is my data private and secure?</h3>
+                    <p>Absolutely! All audio processing happens locally on your device. We don't collect, store, or transmit any personal information. Read our <a href="/privacy.html" style="color: #5BA3F5;">Privacy Policy</a> for details.</p>
+                </div>
             </div>
 
-            <div class="faq-item">
-                <h3>How do Live Activities work?</h3>
-                <p>On iOS 16.1+, you can control Calm Tones directly from your Lock Screen and Dynamic Island. Play, pause, and adjust volume without opening the app.</p>
+            <div class="support-section">
+                <h2>Troubleshooting</h2>
+
+                <h3>Audio Issues</h3>
+                <ul>
+                    <li>Make sure your device volume is turned up</li>
+                    <li>Check that silent mode is disabled</li>
+                    <li>Try restarting the app</li>
+                    <li>Ensure you have sufficient storage space</li>
+                </ul>
+
+                <h3>Background Playback Issues</h3>
+                <ul>
+                    <li>Check that Background App Refresh is enabled for Calm Tones in Settings</li>
+                    <li>Ensure Low Power Mode is not restricting background activity</li>
+                    <li>Make sure the app has permission for background audio</li>
+                </ul>
+
+                <h3>Live Activities Not Working</h3>
+                <ul>
+                    <li>Live Activities require iOS 16.1 or later</li>
+                    <li>Check that Live Activities are enabled in Settings > Face ID & Passcode</li>
+                    <li>Ensure Calm Tones has permission for Live Activities in Settings</li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <h3>What are location-based sound recommendations?</h3>
-                <p>When you enable location access, Calm Tones can suggest appropriate soundscapes for your current environment, like ocean sounds when you're near the beach.</p>
+            <div class="support-section">
+                <h2>Device Requirements</h2>
+                <ul>
+                    <li><strong>iOS:</strong> iOS 15.0 or later</li>
+                    <li><strong>iPhone:</strong> iPhone 7 or newer recommended</li>
+                    <li><strong>iPad:</strong> Compatible with all iPad models supporting iOS 15+</li>
+                    <li><strong>Storage:</strong> At least 100 MB of free space</li>
+                    <li><strong>Internet:</strong> Required only for initial download and updates</li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <h3>Is my data private and secure?</h3>
-                <p>Absolutely! All audio processing happens locally on your device. We don't collect, store, or transmit any personal information. Read our <a href="/privacy.html" style="color: #5BA3F5;">Privacy Policy</a> for details.</p>
+            <div class="contact-card">
+                <h2>Still Need Help?</h2>
+                <p>Can't find what you're looking for? We're here to help!</p>
+                <p><a href="mailto:support@calmtones.app">support@calmtones.app</a></p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">We typically respond within 24 hours</p>
             </div>
         </div>
-
-        <div class="support-section">
-            <h2>Troubleshooting</h2>
-
-            <h3>Audio Issues</h3>
-            <ul>
-                <li>Make sure your device volume is turned up</li>
-                <li>Check that silent mode is disabled</li>
-                <li>Try restarting the app</li>
-                <li>Ensure you have sufficient storage space</li>
-            </ul>
-
-            <h3>Background Playback Issues</h3>
-            <ul>
-                <li>Check that Background App Refresh is enabled for Calm Tones in Settings</li>
-                <li>Ensure Low Power Mode is not restricting background activity</li>
-                <li>Make sure the app has permission for background audio</li>
-            </ul>
-
-            <h3>Live Activities Not Working</h3>
-            <ul>
-                <li>Live Activities require iOS 16.1 or later</li>
-                <li>Check that Live Activities are enabled in Settings > Face ID & Passcode</li>
-                <li>Ensure Calm Tones has permission for Live Activities in Settings</li>
-            </ul>
-        </div>
-
-        <div class="support-section">
-            <h2>Device Requirements</h2>
-            <ul>
-                <li><strong>iOS:</strong> iOS 15.0 or later</li>
-                <li><strong>iPhone:</strong> iPhone 7 or newer recommended</li>
-                <li><strong>iPad:</strong> Compatible with all iPad models supporting iOS 15+</li>
-                <li><strong>Storage:</strong> At least 100 MB of free space</li>
-                <li><strong>Internet:</strong> Required only for initial download and updates</li>
-            </ul>
-        </div>
-
-        <div class="contact-card">
-            <h2>Still Need Help?</h2>
-            <p>Can't find what you're looking for? We're here to help!</p>
-            <p><a href="mailto:support@calmtones.app">support@calmtones.app</a></p>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">We typically respond within 24 hours</p>
-        </div>
-    </div>
     </div>
 
     <!-- Footer -->
