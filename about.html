@@ -128,7 +128,7 @@
             margin-top: 80px;
         }
 
-        .container {
+        .content-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -184,12 +184,51 @@
             margin-bottom: 30px;
         }
 
-        .credits-section {
+        .developer-section {
             background: rgba(74, 144, 226, 0.1);
             border: 1px solid rgba(74, 144, 226, 0.3);
             border-radius: 12px;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .developer-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 60px;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .developer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .developer-name {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .developer-title {
+            color: #5BA3F5;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .developer-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         h2 {
@@ -198,37 +237,14 @@
             font-size: 1.5rem;
         }
 
-        .credit-item {
-            margin-bottom: 15px;
-        }
-
-        .credit-title {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .credit-description {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-        }
-
-        .developer-info {
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .feature-highlights {
+        .tech-stack {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
-        .feature-highlight {
+        .tech-item {
             background: rgba(255,255,255,0.03);
             border-radius: 8px;
             padding: 20px;
@@ -236,15 +252,16 @@
             border-left: 4px solid #5BA3F5;
         }
 
-        .feature-highlight h3 {
+        .tech-item h3 {
             color: #5BA3F5;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
 
-        .feature-highlight p {
+        .tech-item p {
             color: rgba(255,255,255,0.8);
             font-size: 0.9rem;
+            margin: 0;
         }
 
         .thank-you {
@@ -257,18 +274,52 @@
             font-weight: 600;
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #5BA3F5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 2px solid #5BA3F5;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #5BA3F5;
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
             
-            .container {
+            .content-container {
                 padding: 20px 15px;
             }
             
-            .about-section, .credits-section {
+            .about-section, .developer-section {
                 padding: 20px;
+            }
+
+            .developer-photo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
             }
 
             .navbar-nav {
@@ -330,8 +381,8 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <div class="container">
-            <!-- Header Section -->
+        <div class="content-container">
+            <!-- App Header -->
             <div class="about-header">
                 <div class="app-icon">
                     <img src="/android-chrome-512x512.png" alt="Calm Tones Logo">
@@ -341,60 +392,66 @@
                 <p class="description">Find your peace with carefully curated ambient sounds. Perfect for relaxation, focus, and sleep.</p>
             </div>
 
-            <!-- App Features -->
+            <!-- Developer Section -->
+            <div class="developer-section">
+                <div class="developer-photo">
+                    <img src="/profile_photo.jpg" alt="Artem Pereverzev" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #4A90E2 0%, #5BA3F5 100%); align-items: center; justify-content: center; font-size: 48px; border-radius: 50%;">👨‍💻</div>
+                </div>
+                
+                <div class="developer-name">Artem Pereverzev</div>
+                <div class="developer-title">iOS Developer</div>
+                <p class="developer-description">
+                    Passionate about creating peaceful digital experiences that help people find their calm in our busy world. 
+                    With a focus on user privacy and thoughtful design, I believe technology should enhance well-being, not complicate it.
+                </p>
+                
+                <div class="contact-links">
+                    <a href="mailto:support@calmtones.app" class="contact-link">Email</a>
+                    <a href="https://github.com/yourusername" class="contact-link">GitHub</a>
+                    <a href="https://linkedin.com/in/yourusername" class="contact-link">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
             <div class="about-section">
-                <h2>What Makes Calm Tones Special</h2>
-                <div class="feature-highlights">
-                    <div class="feature-highlight">
-                        <h3>🌊 Natural Soundscapes</h3>
-                        <p>Immersive ocean waves, forest sounds, and rain for ultimate relaxation</p>
+                <h2>Built With Care</h2>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <h3>🍎 Native iOS</h3>
+                        <p>Swift & UIKit for optimal performance and iOS integration</p>
                     </div>
-                    <div class="feature-highlight">
-                        <h3>🎚️ Custom Mixing</h3>
-                        <p>Blend multiple sounds to create your perfect ambient atmosphere</p>
+                    <div class="tech-item">
+                        <h3>🎵 Core Audio</h3>
+                        <p>Advanced audio processing with AVAudioEngine for seamless mixing</p>
                     </div>
-                    <div class="feature-highlight">
+                    <div class="tech-item">
                         <h3>📱 Live Activities</h3>
-                        <p>Control sounds from Dynamic Island and Lock Screen on iOS 16.1+</p>
+                        <p>Dynamic Island and Lock Screen controls on iOS 16.1+</p>
                     </div>
-                    <div class="feature-highlight">
+                    <div class="tech-item">
                         <h3>🔒 Privacy First</h3>
-                        <p>All processing happens locally. We don't collect any personal data</p>
+                        <p>Local processing only - no data collection or tracking</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Credits Section -->
-            <div class="credits-section">
-                <h2>Credits</h2>
-                
-                <div class="developer-info">
-                    <div class="credit-item">
-                        <div class="credit-title">Developed by Artem Pereverzev</div>
-                        <div class="credit-description">iOS Developer passionate about creating peaceful digital experiences</div>
-                    </div>
-                </div>
-
-                <div class="credit-item">
-                    <div class="credit-title">High-Quality Audio Samples</div>
-                    <div class="credit-description">Carefully curated ambient sounds optimized for relaxation and focus</div>
-                </div>
-
-                <div class="credit-item">
-                    <div class="credit-title">User Experience Design</div>
-                    <div class="credit-description">Intuitive interface designed for mindful interaction and ease of use</div>
-                </div>
-
-                <div class="credit-item">
-                    <div class="credit-title">Advanced iOS Features</div>
-                    <div class="credit-description">Live Activities, background playback, and location-based recommendations</div>
-                </div>
+            <!-- Audio Credits -->
+            <div class="about-section">
+                <h2>Audio Quality</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                    High-quality ambient sounds carefully selected and optimized for relaxation, focus, and sleep. 
+                    Each audio file is processed to ensure seamless looping and optimal file size without compromising quality.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); margin: 0;">
+                    All audio processing happens locally on your device for the best performance and your privacy.
+                </p>
             </div>
 
             <!-- Thank You Message -->
             <div class="thank-you">
                 <h2 style="margin-bottom: 10px; color: white;">Thank you for using Calm Tones! 🎵</h2>
-                <p style="margin: 0; color: rgba(255,255,255,0.9);">Your peace and well-being inspire us to create better experiences every day.</p>
+                <p style="margin: 0; color: rgba(255,255,255,0.9);">Your peace and well-being inspire me to create better experiences every day.</p>
             </div>
         </div>
     </div>
